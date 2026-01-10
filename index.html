@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(120deg, #020617, #020617, #0f172a);
+            color: #e5e7eb;
+            font-family: sans-serif;
+        }
+
+        header{
+            position: fixed;
+            width: 100%;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(2,6,23,.7);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+
+        nav{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        nav a{
+            text-decoration: none;
+            color: white;
+            transition: 1s;
+        }
+
+        nav a:hover{
+            color: lightskyblue;
+        }
+
+        .banner{
+            background: radial-gradient(circle at top, #2563eb, #020617 60%);
+            width: 100%;
+            padding: 250px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .banner h1{
+            color: azure;
+        }
+
+        .banner p{
+            font-family: sans-serif;
+            font-size: large;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .banner a{
+            padding: 14px 34px;
+            background: linear-gradient(135deg, #2258c5, #4a9bde);
+            padding: 20px 40px;
+            color:white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.807);
+            transition: 1s;
+        }
+
+        .banner a:hover{
+            color: #2258c5;
+            background: white;
+            box-shadow: 0 10px 30px black;
+        }
+        
+        .jcard h2{
+            text-align: center;
+        }
+
+        .kelompok{
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr;
+            margin-left: 70px;
+            gap: 10px;
+        }
+
+        .kartu{
+            width: 250px;
+            background: white;
+            border-radius: 12px;
+            margin-top: 100px;
+            box-shadow: 0 8px 20px rgb(255, 248, 248);
+            text-align: center;
+            position: center;
+            transition: all 1s ease;
+        }
+
+        .kartu:hover{
+            transform: translateY(-15px);
+        }
+
+        .kartu img{
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .kartu .ket{
+            padding: 15px;
+            padding-bottom: 40px;
+            color: black;
+        }
+
+        .kartu .ket h3{
+            margin: 8px 0 4px;
+        }
+
+        .kartu .ket p{
+            background: radial-gradient(circle at right, #2563eb, #020617 60%);
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: white;
+            font-size: 14px;
+            transition: 1s;
+        }
+
+        .kartu .ket p:hover{
+            background: radial-gradient(circle at right, blue, azure 60%);
+            color: #0f172a;
+        }
+
+        .nidul h2{
+            margin-top: 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .animation {
+            display: flex;
+            width: 95%;
+            border-radius: 15px;
+            margin: 50px auto;
+            overflow-x: hidden;
+        }
+
+        .group {
+            display: flex;
+            gap: 1em;
+            padding: 1em;
+            animation: spin 30s infinite linear;
+        }
+
+        .bg {
+            min-width: 250px;
+        }
+
+        .bg img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        @keyframes spin {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        .tdul h1{
+            text-align: center;
+            color: white;
+        }
+
+        .content-table{
+            border-collapse: collapse;
+            margin: 25px 0;
+            margin-left: 200px;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-table thead tr{
+            background-color: #009879;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td{
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr{
+          border: 1px solid #0f172a ;
+        }
+
+        .content-table tbody tr:nth-of-type(even){
+            background: #0f172a;
+            color: #009879;
+        }
+
+        .content-table tbody tr:last-of-type{
+            border-bottom: 2px solid #009879;
+        }
+
+        .content-table tbody tr .activate-row{
+            font-weight: bold;
+            color: #009879;
+        }
+
+        .rdul h1{
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .roadmap{
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+        }
+
+        .roadmap .content{
+            background: radial-gradient(circle at right, #2563eb, #0f172a 60%);
+            padding: 25px 50px;
+            margin: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px white;
+            transition: all 1s ease;
+        }
+
+        .roadmap .content:hover{
+            transform: translateY(-20px);
+        }
+
+        .rpdul{
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .tahap{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kls{
+            background: radial-gradient(circle at right, #2563eb, #0f172a 60%);
+            padding: 25px 50px;
+            margin: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px white;
+            transition: all 1s ease;
+        }
+
+        .kls:hover{
+            transform: translateY(-20px);
+        }
+
+        .kls h3{
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .kls h2{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .kls .click{
+            background: grey;
+            padding: 5px 30px;
+            border: 2px solid white;
+            font-weight: bold;
+            text-decoration: none;
+            color: whitesmoke;
+            border-radius: 20px;
+            transition: all 1s ease;
+        }
+
+        .kls .click:hover{
+            background: radial-gradient(circle at right, #2563eb, #0f172a 60%);
+        }
+
+        .medul{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .medul h2{
+            margin-bottom: 30px;
+        }
+
+        .sosmed{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            margin-top:30px;
+        }
+        .sosmed a{
+            width:56px;
+            height:56px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:24px;color:white;
+            text-decoration:none;
+            box-shadow:0 10px 24px white;
+            transition:all 1s ease;
+        }
+
+        .sosmed a:hover{
+            transform:translateY(-6px)
+        }
+
+        .wa{
+            background:#22c55e;
+            color:#020617;
+        }
+        .ig{
+            background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+        }
+
+        .tt{
+            background:#000000;
+        }
+
+        .fb{
+            background:#1877F2;
+        }
+
+        .gh{
+            background:#111827;
+        }
+
+        footer{
+            background: radial-gradient(circle at right, #2563eb, #0f172a 60%);
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="judul"><i class="fa-solid fa-laptop-code"> Roadmap Programmer</i></div>
+        <nav>
+            <a href="#home"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="#roadmap"><i class="fa-solid fa-magnifying-glass"></i>RoadMap</a>
+            <a target="_blank" href="https://wa.me/6282120810067/"><i class="fa-solid fa-phone"></i>Contact</a>
+            <a href="#medsos"><i class="fa-solid fa-hashtag"></i>Medsos</a>
+        </nav>
+    </header>
+
+    <section class="banner" id="home">
+        <h1>Roadmap Menjadi Programmer</h1>
+        <p>"Ayo kita simak dan ikutin tata cara nya menjadi programmer yang ahli"</p>
+        <a href="#roadmap">Klik Mulai!</a>
+    </section>
+
+    <div class="jcard">
+        <h2>My anggota</h2>
+
+        <div class="kelompok">
+            <div class="kartu">
+                <img src="afif.jpeg" alt="">
+                <div class="ket">
+                    <h3>Afif Abdillah</h3>
+                    <p>Murid Skinfa</p>
+                </div>
+            </div>
+
+            <div class="kartu">
+                <img src="fadhil.jpeg" alt="">
+                <div class="ket">
+                    <h3>Muhammad Fadhil S</h3>
+                    <p>Murid Skinfa</p>
+                </div>
+            </div>
+
+            <div class="kartu">
+                <img src="lukman.jpeg" alt="">
+                <div class="ket">
+                    <h3>Lukmanul Hakim</h3>
+                    <p>Murid Skinfa</p>
+                </div>
+            </div>
+
+            <div class="kartu">
+                <img src="olan.jpeg" alt="">
+                <div class="ket">
+                    <h3>Mohammad maulana K</h3>
+                    <p>Murid Skinfa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nidul"><h2>My album animation</h2></div>
+    <div class="animation">
+        <div class="group">
+            <div class="bg"><img src="i1.jpeg" alt="1"></div>
+            <div class="bg"><img src="i2.jpeg" alt="2"></div>
+            <div class="bg"><img src="i3.jpeg" alt="3"></div>
+            <div class="bg"><img src="i4.jpeg" alt="4"></div>
+            <div class="bg"><img src="i5.jpeg" alt="5"></div>
+            <div class="bg"><img src="i6.jpeg" alt="6"></div>
+            <div class="bg"><img src="i7.jpeg" alt="7"></div>
+            <div class="bg"><img src="i8.jpeg" alt="8"></div>
+            <div class="bg"><img src="i9.jpeg" alt="9"></div>
+            <div class="bg"><img src="i10.jpeg" alt="10"></div>
+        </div>
+
+        <div aria-hidden="true" class="group">
+            <div class="bg"><img src="i1.jpeg" alt="1"></div>
+            <div class="bg"><img src="i2.jpeg" alt="2"></div>
+            <div class="bg"><img src="i3.jpeg" alt="3"></div>
+            <div class="bg"><img src="i4.jpeg" alt="4"></div>
+            <div class="bg"><img src="i5.jpeg" alt="5"></div>
+            <div class="bg"><img src="i6.jpeg" alt="6"></div>
+            <div class="bg"><img src="i7.jpeg" alt="7"></div>
+            <div class="bg"><img src="i8.jpeg" alt="8"></div>
+            <div class="bg"><img src="i9.jpeg" alt="9"></div>
+            <div class="bg"><img src="i10.jpeg" alt="10"></div>
+        </div>
+    </div>
+
+    <div class="tdul"><h1>Mengenal Peran Programmer Di Industri</h1></div>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Jenis Programmer</th>
+                <th>Tugas Utama</th>
+                <th>Menggunakan Tools</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Frontend Developer</td>
+                <td>Membuat tampilan website/aplikasi yang dilihat dan digunakan oleh pengguna (Ui/Ux)</td>
+                <td>Html, Css, JavaScript, React</td>
+            </tr>
+
+            <tr class="active-row">
+                <td>2</td>
+                <td>Backend Developer</td>
+                <td>Mengelola server database, dan logika aplikasi (data, login, Api)</td>
+                <td>PHP, Node.js, Java, Mysql</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Fullstack Developer</td>
+                <td>Mengerjakan Frontend dan Backend Sekaligus</td>
+                <td>Html, Css, JavaScript, React, Node.js, java, Php   </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="rdul"><h1>RoadMap Programmer dari nol- sampai akhir</h1></div>
+    <div class="roadmap" id="roadmap">
+            <div class="content">
+                <h1><i class="fa-solid fa-file-code"></i>Apa itu programmer?</h1>
+                <p>Programmer adalah orang yang menulis, mengembangkan, dan memelihara kode program agar komputer, website, atau aplikasi bisa bekerja sesuai kebutuhan manusia.</p>
+            </div>
+            
+            <div class="content">
+                <h1><i class="fa-solid fa-globe"></i>Penjelasan Sederhana</h1>
+                <p>Programmer memberi instruksi ke komputer menggunakan bahasa pemrograman (seperti HTML, JavaScript, Python) supaya komputer bisa:
+                    <ul>
+                        <li>Menjalankan aplikasi</li>
+                        <li>Menampilkan website</li>
+                        <li>Mengolah data</li>
+                        <li>Mengontrol sistem atau perangkat</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="content">
+                <h1><i class="fa-solid fa-gears"></i>Tugas Utama Programmer</h1>
+                <p>
+                    <ul>
+                        <li>Menulis dan membaca kode program</li>
+                        <li>Membuat aplikasi, website, atau software</li>
+                        <li>Memperbaiki bug / error</li>
+                        <li>Mengembangkan fitur baru</li>
+                        <li>Bekerja sama dengan tim (desainer, backend, dll)</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="content">
+                <h1><i class="fa-solid fa-user-secret"></i>Contoh Jenis Programmer</h1>
+                <p>
+                    <ul>
+                        <li>Frontend Developer</li>
+                        <li>Backend Developer</li>
+                        <li>Full Stack Developer</li>
+                        <li>Mobile Developer</li>
+                        <li>Web Developer</li>
+                        <li>Cyber Security Engineer</li>
+                        <li>Software Engineer</li>
+                        <li>Dekstop Developer</li>
+                        <li>Web Designer</li>
+                        <li>Wordprees Developer</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="content">
+                <h1><i class="fa-solid fa-paintbrush"></i>Contoh pemrograman coding sesuai kebutuhan yang berbeda seperti</h1>
+                <p>
+                    <ul>
+                        <li><i class="fa-brands fa-html5"></i>Html</li>
+                        <li><i class="fa-brands fa-css3-alt"></i>CSS</li>
+                        <li><i class="fa-brands fa-js"></i>JavaScript</li>
+                        <li><i class="fa-brands fa-java"></i>Java</li>
+                        <li><i class="fa-solid fa-database"></i>Mysql</li>
+                        <li><i class="fa-solid fa-c"></i># /c+</li>
+                        <li><i class="fa-brands fa-node"></i>Node.js</li>
+                        <li><i class="fa-brands fa-react"></i>React</li>
+                        <li><i class="fa-brands fa-python"></i>Python</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="content">
+                <h1><i class="fa-solid fa-wrench"></i>Contoh Alat yang untuk membantu bahasa pemrogrman</h1>
+                <p>
+                    <ul>
+                        <li>Visual code studio</li>
+                        <li>Visual studio 2026</li>
+                        <li>Android studio</li>
+                        <li>Python Interpreter</li>
+                        <li>Chrome DevTools</li>
+                        <li><i class="fa-brands fa-github"></i>Git-hub(buat kolaborasi code, biar bisa online webnya/bisa diiat orang lain)</li>
+                    </ul>
+                </p>
+            </div>
+    </div>
+
+    <div class="rpdul"><h2>Tahap-Tahap Yang Kalian Harus Hadapi Kalo Mau Belajar Jadi Programmer yang Ahli</h2></div>
+    <div class="Tahap">
+            <div class="kls">
+                <h1>Tahap 1-Dasar (Kelas X)</h1>
+                <ul>
+                    <h3>Berikut tahap awal yg wajib di pelajari :</h3>
+                    <li>Memilih Role sesuai kebutuhan contoh : frontend , backend, fullstack , dll.</li>
+                    <li>Meningkatkan algoritma penyelesaian masalah.</li>
+                    <li>sering-sering latihan ngoding kalo sudah di bimbing guru.</li>
+                    <li>sering-sering latihan ngoding kalo sudah di bimbing guru.</li>
+                    <li>sering-sering mencari tantangan yang menantang / menyeselesaikan masalah besar.</li>
+                    <li>Mengikuti Eskul IT di sekolah.</li>
+                </ul>
+
+                <h2>Yang disarankan untuk pemula adalah mengambil peran frontend dan web design.</h2>
+                <ul>
+                    <h3>Berikut Materi awal yang harus di pelajari selama semester 1-2 :</h3>
+                    <li>Mendownload tools yang bernama Visual Code Studio link nya <a href="https://code.visualstudio.com/download" target="_blank">click download</a></li>
+                    <li><i class="fa-brands fa-html5"></i> Mempelajari html dasar - html yang hard</li>
+                    <li><i class="fa-brands fa-css3-alt"></i> Mempelajari Css Style agar memperindah webmu</li>
+                    <li><i class="fa-brands fa-js"></i> Mempelajari dan meningkatkan belajar javascript</li>
+                    <li><i class="fa-brands fa-python"></i> Mempelajari dasar python</li>
+                    <li><i class="fa-brands fa-github"></i> Belajar Mosting web di Git-hub sebagai hasil karya andalan web yang bagus menurutmu</li>
+                </ul>
+
+                <h3>Butuh temen bisa click btn ini</h3>
+                <a target="_blank" class="click" href="https://wa.me/6282120810067/">Click sekarang</a>
+            </div>
+
+           <div class="kls">
+                <h1>Tahap 2-Menengah (Kelas XI)</h1>
+                <ul>
+                    <h3>Berikut tahap Menengah yg wajib di pelajari :</h3>
+                    <li>Melanjutkan peran yang sebelum + meningkatkan nya lagi skil nya lagi : frontend , backend, fullstack , dll.</li>
+                    <li>Melanjutkan belajar HTML ke HTML5</li>
+                    <li>sering-sering latihan ngoding kalo sudah di bimbing guru.</li>
+                    <li>sering-sering latihan ngoding kalo sudah di bimbing guru.</li>
+                    <li>sering-sering mencari tantangan yang menantang / menyeselesaikan masalah besar.</li>
+                    <li>Mengikuti Eskul IT di sekolah.</li>
+                    <li>Meningkatkan belajar Css lagi supaya desain web kamu ganteng and cantik.</li>
+                    <li>Beralih memperbanyak belajar <i class="fa-brands fa-js"></i> Javascript.</li>
+                    <li>Mengikuti lomba Agar memperbanyak portofolio mu sendiri agar dianggap programmer ahli dan bukan junior lagi.</li>
+                </ul>
+
+                <h2>Yang disarankan untuk Memilih Peran yang menantang yaitu Peran Dekstop Developer, Backend Developer , atau Mobile Developer</h2>
+                <ul>
+                    <h3>Berikut Materi awal yang harus di pelajari selama semester 1-2 :</h3>
+                    <li>Belajar menggunakan XAMPP bersama guru/teman yang ahli<a target="_blank" href="https://www.apachefriends.org/download.html" target="_blank">click download</a></li>
+                    <li><i class="fa-brands fa-java"></i> Belajar Java Dengan teman/guru ysng sudah ahli link download <a target="_blank" href="https://www.java.com/en/download/manual.jsp">Click download</a></li>
+                    <li><i class="fa-solid fa-database"></i> Belajar menggunakan Mysql link download <a target="_blank" href="https://www.mysql.com/downloads/">click Download</a></li>
+                    <li><i class="fa-brands fa-js"></i> Mempelajari dan meningkatkan belajar javascript</li>
+                    <li><i class="fa-brands fa-python"></i> Mempelajari tigkat menengah Python</li>
+                    <li><i class="fa-brands fa-php"></i> Mempelajari PHP link download daleman untuk visual studio code <a target="_blank" href="https://windows.php.net/download/"> Click download</a> bisa juga download langsung di visual studio code nya</li>
+                    <li>Di sarankan belajar node.js <i class="fa-brands fa-node"></i> link download <a target="_blank" href="https://nodejs.org/en">Click download</a> Bebas sih sebenarnya , di visual studio code juga bisa</li>
+                    <li>Mempelajari <i class="fa-brands fa-react"></i>React kalian bisa belajar di visual Studio 2026 dan Android Studio, tapi juga bisa pake Vs studio code berikut link download visual studio 2026 : <a target="_blank" href="https://visualstudio.microsoft.com/insiders/">Click download</a> dan ini link untuk download Android Studio : <a target="_blank" href="https://developer.android.com/studio?hl=id">Click download</a></li>
+                    <li>Sumber Belajar Tahap 2 dari kakak kelas 11 dan sepengetahuan belajar mandiri.</li>
+                </ul>
+
+                <h3>Butuh temen bisa click btn ini</h3>
+                <a target="_blank" class="click" href="https://wa.me/6282120810067/">Click sekarang</a>
+            </div>
+
+            <div class="kls">
+                <h1>Tahap 3-Akhir/Lulus (Kelas XII)</h1>
+                <ul>
+                    <h3>Berikut tahap Akhir yg wajib di pelajari :</h3>
+                    <li>Bebas mau lanjutin role nya atau pilih role lain selain frontend , backend, dan fullstack.</li>
+                    <li>Tingkatin lagi belajar role backend nya.</li>
+                    <li>Coba belajar marketing untuk menjual web atau server yang kamu buat.</li>
+                    <li>Coba magang di tempat industri atau tempat selain industri.</li>
+                    <li>Pelajari bahasa pemrograman lain selain yang di pelajari kelas 10 dan 11.</li>
+                </ul>
+
+                <h2>Yang disarankan untuk pemula adalah mengambil peran frontend dan web design.</h2>
+                <ul>
+                    <h3>Berikut Materi awal yang harus di pelajari selama semester 1-2 :</h3>
+                    <li>untuk semester 1 kita kan pkl jadi berarti kita di tempat pkl nya buat proyek besar untuk tempat kerjanya contoh perindustrian dan perkantoran.</li>
+                    <li>untuk semester 2 paling belajar sisa nya yang ga sempet di pelajari di kelas 11 atau mengulangi materi hard nya lagi di sekolah.</li>
+                    <li>.... sumber dari menurut diri sendiri karena ya materi wajib untuk sekolahnya pasti udah kelar waktu kelas 12 , sisanya paling guru mengajari murid yang sedikit belum paham.</li>
+                </ul>
+
+                <h3>Butuh temen bisa click btn ini</h3>
+                <a target="_blank" class="click" href="https://wa.me/6282120810067/">Click sekarang</a>
+            </div>
+
+            <div class="kls">
+                <h1>Kesimpulan kami</h1>
+                <p>sebenarnya mau jadi peran prgrammer apa aja bebas kan hak milih kalian, dan suesuaikan saja kebutuhan kalian saja.Asalkan kalian jadi programmer itu untuk kebaikan lainnya bukan untuk kejahatan. </p>
+                <p>salam dari penulis coding by lukman/march11th.</p>
+                <h3>Butuh temen bisa click btn ini</h3>
+                <a target="_blank" class="click" href="https://wa.me/6282120810067/">Click sekarang</a>
+            </div>
+    </div>
+
+    <div class="medul">
+        <h2>Jangan Lupa follow Akun Medsos Kami Dan Hubungi Kami Jika Pengen Template Webnya</h2>
+        <h3>Terimakasih</h3>
+    </div>
+
+    <div class="sosmed" id="medsos">
+        <a href="https://wa.me/6282120810067" target="_blank" class="wa"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/bennet_natlan29?igsh=MmFmMHY5bWdrZG5y" target="_blank" class="ig"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@chibi_bennet.genshin?_r=1&_t=ZS-92xBarYWWAe" target="_blank" class="tt"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/share/17vWoGA7tm/" target="_blank" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://github.com/lukmanulhakim1103-mrt" target="_blank" class="gh"><i class="fa-brands fa-github"></i></a>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Roadmap Menjadi Programmer yang Ahli By Kelompok 1 | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
