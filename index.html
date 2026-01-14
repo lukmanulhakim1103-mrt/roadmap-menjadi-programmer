@@ -120,6 +120,41 @@
             to { transform: translateX(-100%); }
         }
 
+        .kedul h1{
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            margin-bottom: 60px;
+        }
+
+        .kelompok{
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 70px;
+        }
+
+        .anggota{
+            width: 75%;
+            background: radial-gradient(circle at right, #2563eb, #020617 60%);
+            padding: 50px 40px;
+            box-shadow: 0 10px 20px white;
+            text-align: center;
+            margin-left: 15%;
+            border-radius: 20px;
+            font-family: sans-serif;
+            font-size: 16px;
+            transition: all 1s ease;
+        }
+
+        .anggota:hover{
+            background: radial-gradient(circle at right, #2563eb, white 60%);
+            color: black;
+            transform: translateY(-15px);
+            box-shadow: 0 10px 20px black;
+        }
+
         .tdul h1{
             text-align: center;
             color: white;
@@ -348,6 +383,14 @@
             <div class="bg"><img src="i9.jpeg" alt="9"></div>
             <div class="bg"><img src="i10.jpeg" alt="10"></div>
         </div>
+    </div>
+
+    <div class="kedul"><h1>My Anggota</h1></div>
+    <div class="kelompok">
+        <div class="anggota"><h3>Lukmanul Hakim</h3></div>
+        <div class="anggota"><h3>Afif Abdilah</h3></div>
+        <div class="anggota"><h3>Muhammad Fadhil syahputra</h3></div>
+        <div class="anggota"><h3>Mohammad maunala Kahfi</h3></div>
     </div>
 
     <div class="tdul"><h1>Mengenal Peran Programmer Di Industri</h1></div>
@@ -582,3 +625,4 @@
 
 </body>
 </html>
+
